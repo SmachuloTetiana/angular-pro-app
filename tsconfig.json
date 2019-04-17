@@ -3,6 +3,10 @@
   "compilerOptions": {
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "store": ["src/store.ts"]
+    },
     "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
