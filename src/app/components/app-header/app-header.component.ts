@@ -4,6 +4,7 @@ import { User } from '../../../auth/shared/services/auth/auth.service';
 @Component({
     selector: 'app-header',
     templateUrl: './app-header.component.html',
+    styleUrls: ['./app-header.component.css'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 

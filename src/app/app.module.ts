@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { Store } from './../store';
 
 import { AuthModule } from '../auth/auth.module';
+import { HealthModule } from '../health/health.module';
 
 import { AppComponent } from './app.component';
 
@@ -22,7 +23,8 @@ export const ROUTES: Routes = [];
   imports: [
     BrowserModule,
     RouterModule.forRoot(ROUTES),
-    AuthModule
+    AuthModule,
+    HealthModule
   ],
   providers: [
     Store

@@ -1,0 +1,6 @@
+.app-header__user-info span {
+    width: 24px;
+    height: 24px;
+    display: block;
+    background: url(../../../img/logout.svg) no-repeat;
+}
