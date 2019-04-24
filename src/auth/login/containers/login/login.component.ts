@@ -10,9 +10,9 @@ import { AuthService } from '../../../shared/services/auth/auth.service';
   template: `
     <div>
       <auth-form (submitted)="loginUser($event)">
-        <h1>Login</h1>
+        <h2>Login</h2>
         <a routerLink="/auth/register">No register?</a>
-        <button type="submit">
+        <button class="btn btn-primary" type="submit">
           Login
         </button>
         <div class="error" *ngIf="error">

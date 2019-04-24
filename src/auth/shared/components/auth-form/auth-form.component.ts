@@ -8,26 +8,31 @@ import { FormBuilder , FormGroup, Validators } from '@angular/forms';
         <div class="auth-form">
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-                <ng-content select="h1"></ng-content>
+                <ng-content select="h2"></ng-content>
 
                 <label>
-                    <input 
-                        type="email" 
-                        placeholder="Email adress"
-                        formControlName="email">
+                    <div class="form-group">
                         <input 
-                            type="password" 
-                            placeholder="Enter password"
-                            formControlName="password">
+                            class="form-control"
+                            type="email" 
+                            placeholder="Email adress"
+                            formControlName="email">
+                        <div class="error" *ngIf="emailFormat">
+                            Invalid email format
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                    <input 
+                        class="form-control"
+                        type="password" 
+                        placeholder="Enter password"
+                        formControlName="password">
+                    <div class="error" *ngIf="passwordInvalid">
+                        Password is required
+                    </div>
+                    </div>
                 </label>
-
-                <div class="error" *ngIf="emailFormat">
-                    Invalid email format
-                </div>
-
-                <div class="error" *ngIf="passwordInvalid">
-                    Password is required
-                </div>
 
                 <ng-content select=".error"></ng-content>
 
