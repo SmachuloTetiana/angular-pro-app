@@ -3,19 +3,20 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store } from '../../../../store';
 
 import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 
 import { MealsService, Meal } from '../../../shared/services/meals/meals.service';
 
+
 @Component({
-  selector: 'meals',
+    selector: 'meals',
     templateUrl: './meals.component.html'
 })
 
 export class MealsComponent implements OnInit, OnDestroy{
 
     meals$: Observable<Meal[]>;
-    subscription: Subscription
+    subscription: Subscription;
 
     constructor(
         private store: Store,

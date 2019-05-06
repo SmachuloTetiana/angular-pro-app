@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
 import { MealsComponent } from './containers/meals/meals.component';
-import { SharedModule } from '../../auth/shared/shared.module';
+import { SharedModule } from '../shared/shared.module';
 
 export const ROUTES: Routes = [
     { path: '', component: MealsComponent }

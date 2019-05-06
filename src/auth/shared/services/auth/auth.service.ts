@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 
 import { Store } from '../../../../store';
 
-import 'rxjs/add/operator/do';
+// import { do } from "rxjs/operators";
+import { tap } from 'rxjs/operators';
 
 import { AngularFireAuth } from '@angular/fire/auth';
 
@@ -16,7 +17,7 @@ export interface User {
 export class AuthService {
 
     auth$ = this.af.authState
-        .do(next => {
+        .pipe(tap(next => {
             if(!next) {
                 this.store.set('user', null);
                 return;
@@ -27,7 +28,7 @@ export class AuthService {
                 authenticated: true
             }
             this.store.set('user', user);
-        });
+        }));
 
     constructor(
         private store: Store,

@@ -10,11 +10,9 @@ import { User } from '../../../auth/shared/services/auth/auth.service';
 
 export class AppHeaderComponent {
 
-    @Input()
-    user: User;
+    @Input() user: User;
 
-    @Output()
-    logout = new EventEmitter<any>();
+    @Output() logout = new EventEmitter<any>();
 
     logoutUser() {
         this.logout.emit();
